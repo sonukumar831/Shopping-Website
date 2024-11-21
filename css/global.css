@@ -1,0 +1,321 @@
+/* Google Fonts  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/*-----------------------------------*\
+    # CSS Reset
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+/*-----------------------------------*\
+    # Custome Scrollbar
+\*-----------------------------------*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
+}
+
+/*-----------------------------------*\
+    # Custome Variables / Properties
+\*-----------------------------------*/
+
+:root {
+    /* Custom Colors */
+    --main-color-light: #ff7b9a;
+    --main-color: #ff3e6c;
+    --main-color-dark: #ff6378;
+    --orange: #ff905a;
+    --green: #03a685;
+    --blue: #7fd7eb;
+    --text-dark: #282c3f;
+    --gray: #787878;
+
+    /* Custom Size */
+    --fs-sm: 1rem;
+    --fs-md: 1.6rem;
+    --fs-lg: 2rem;
+    --fs-xl: 2.5rem;
+    --fs-xxl: 3rem;
+}
+
+/*-----------------------------------*\
+    # Custome Classes
+\*-----------------------------------*/
+
+/* Active Navigation */
+.nav-active {
+    color: var(--main-color) !important;
+}
+
+/* Display Block on Mobile  */
+.notMobile {
+    display: block;
+}
+
+/* Hide Block on Mobile */
+.onMobile {
+    display: none;
+}
+
+/* Custom Buttons */
+.btn {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.btn:hover {
+    background-color: var(--main-color-dark);
+}
+
+/* Product Box Global Styling */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.product-box {
+    width: 275px;
+    /* border: 2px solid #cacaca; */
+    /* border-radius: 10px; */
+    background-color: whitesmoke;
+    /* text-align: center; */
+}
+
+.product-box:hover {
+    box-shadow: 0 0 10px 4px whitesmoke;
+    border: 1px solid whitesmoke;
+}
+
+.product-box img {
+    height: 275px;
+    width: 100%;
+}
+
+.product-desc {
+    line-height: 2.2rem;
+    padding: 0.6rem;
+}
+
+.product-desc h4 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.product-desc h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.product-rating i {
+    /* color: gold; */
+    color: var(--orange);
+    font-size: 1.6rem;
+}
+
+.product-rating span {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.product-desc h3 {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.product-actions {
+    width: 100%;
+}
+
+.product-actions a {
+    display: block;
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    padding: 7px 0;
+}
+
+/* See More Button */
+.show-more {
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.show-more a {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 0.7rem 3.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.show-more a:hover {
+    background-color: #fff;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+/* Scroll Animation */
+
+.reveal {
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1.2s all ease-in-out;
+}
+
+.reveal.animation-on-scroll {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* Animations */
+
+@keyframes fade-in-animation {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*-----------------------------------*\
+    # Popup Modal
+\*-----------------------------------*/
+
+.popup-close-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.3s all ease-in-out;
+}
+
+.confirm-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    height: 300px;
+    width: 500px;
+    margin-top: -150px; /* negative half of height */
+    margin-left: -250px; /* Negative half of width */
+    background-color: whitesmoke;
+    /* display: none; */
+    border: 1px solid #cacaca;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.popup-content i {
+    font-size: 7rem;
+    color:#f15e5e;
+    margin-bottom: 1.5rem;
+}
+
+.popup-content h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.popup-content span {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #6e6262;
+    text-align: center;
+}
+
+.popup-btn {
+    padding: 2.5rem 0;
+}
+
+.popup-btn button {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: gray;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.popup-btn a {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+    background-color:#f15e5e;
+    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+}

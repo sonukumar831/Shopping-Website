@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Hub - User Profile</title>
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico" type="image/x-icon">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- responsive CSS Link -->
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body id="body">
+    <!-- Overlay For Popup -->
+    <div id="modal-close-overlay"></div>
+
+    <!-- Login Signup Modal -->
+    <div id="modal">
+        <!-- Modal Image -->
+        <div id="modal-image">
+            <img src="./images/Modal/modal.png" alt="Modal Image">
+        </div>
+        <!-- Modal Close Button -->
+        <div id="modal-close-btn">
+            <i class="fa-solid fa-x" id="closeModal"></i>
+        </div>
+        <!-- Login Form -->
+        <div id="modal-login-form">
+            <h3>Login</h3>
+            <form action="#" id="login-form">
+                <div class="modal-input-box">
+                    <input type="email" placeholder="Email Address" id="login-email-input">
+                    <i id="login-email-icon" class="fa-regular fa-envelope" style="color: #a0a4ac;"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Password" id="login-password-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="login-eye-icon"></i>
+                </div>
+                <div class="modal-input-box">
+                    <a href="#">Forgot Password ?</a>
+                </div>
+                <div class="modal-input-box">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="modal-input-box">
+                    <p>Don't have an Account ? <a id="toSignupPage">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- Signup Form -->
+        <div id="modal-signup-form">
+            <h3>Signup</h3>
+            <form action="#" id="signup-form">
+                <div class="modal-input-box">
+                    <input type="text" placeholder="Full Name" id="signup-username-input">
+                </div>
+                <div class="modal-input-box">
+                    <input type="email" placeholder="Email Address" id="signup-email-input">
+                    <i id="signup-email-icon" class="fa-regular fa-envelope" style="color: #a0a4ac;"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Password" id="signup-password-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="signup-eye-icon1"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Confirm Password" id="signup-cpassword-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="signup-eye-icon2"></i>
+                </div>
+                <div class="modal-input-box">
+                    <button type="submit">Sign up</button>
+                </div>
+                <div class="modal-input-box">
+                    <p>Already have an Account ? <a id="toLoginPage">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <!-- Header Top -->
+        <div id="header-top">
+            <div id="logo">
+                <a href="./index.html">
+                    <img src="./images/logo/logo.png" alt="Website Logo">
+                </a>
+            </div>
+            <div class="search-container notMobile" id="search-product-input-box">
+                <form action="#">
+                    <input type="search" placeholder="Search Your Product..." id="search-product-input">
+                </form>
+            </div>
+            <!-- After Login -->
+            <div class="user-actions notMobile" id="profile-dropdown-box">
+                <div id="show-dropdown">
+                    <div id="dropdown-title">
+                        <a href="./profile.html">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                        <div id="profile-dropdown">
+                            <div id="profile-dropdown-title">
+                                <em>Hey</em>
+                                <span>Guest</span>
+                            </div>
+                            <div id="dropdown-content">
+                                <a href="./profile.html">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="./cart.html">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>My Cart</span>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="./cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
+            <!-- Mobile Bars -->
+            <div class="user-actions onMobile">
+                <i class="fa-solid fa-magnifying-glass" id="mobile-search"></i>
+                <i class="fa-solid fa-bars" id="hamburger"></i>
+            </div>
+        </div>
+        <!-- Header Navigation -->
+        <nav id="navbar">
+            <ul class="nav-items" id="mobile-navigation">
+                <div class="nav-profile-pic onMobile">
+                    <h3><i class="fa-solid fa-circle-user"></i> &nbsp;Guest</h3>
+                </div>
+                <li class="mobile-user-actions onMobile"></li>
+                </li>
+                <li><a href="./index.html" class="nav-active">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li>
+                    <div class="user-actions" id="openModal">
+                        <a class="openModal" style="cursor: pointer;">Login / Signup</a>
+                    </div>
+                </li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-search-box">
+            <!-- Search Container -->
+            <div id="search-container-2">
+                <form action="#">
+                    <input type="search" placeholder="Search Your Product..." id="search-product-input-2">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- User Profile Details -->
+    <section id="profile-details">
+        <div id="profile-container">
+            <div id="profile-box1">
+                <img src="./images/profile/profile-pic.png" alt="Profile pic">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                <h3>Guest</h3>
+            </div>
+            <div id="profile-box2">
+                <h2>Personal Information</h2>
+                <div id="user-details">
+                    <form action="#">
+                        <div class="info-box">
+                            <h3>Profile Name : </h3>
+                            <input type="text" value="Guest">
+                        </div>
+                        <div class="info-box">
+                            <div class="info-box-child">
+                                <h3>Email :</h3>
+                                <span>dummy@gmail.com</span>
+                            </div>
+                            <div class="info-box-child">
+                                <h3>Phone no :</h3>
+                                <input type="text" value="1-2345-6789-0">
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h3>Confirm Password :</h3>
+                            <input type="password" value="fashion">
+                        </div>
+                        <div class="info-box">
+                            <div class="info-box-child">
+                                <h3>New Password :</h3>
+                                <input type="password" value="Kolkata">
+                            </div>
+                            <div class="info-box-child">
+                                <h3>Re-Enter Password :</h3>
+                                <input type="password" value="Kolkata">
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-box-child">
+                                <h3>City :</h3>
+                                <input type="text" value="Kolkata">
+                            </div>
+                            <div class="info-box-child">
+                                <h3>Zip Code :</h3>
+                                <input type="number" value="712233">
+                            </div>
+                            <div class="info-box-child">
+                                <h3>State :</h3>
+                                <input type="text" value="West Bengal">
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <button type="submit" id="user-profile-cancel-btn1">Save</button>
+                            <button id="user-profile-cancel-btn2">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer-top">
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Fashion Hub</h3>
+                </div>
+                <div class="footer-content">
+                    <p><i class="fa-solid fa-location-dot"></i> Techno College Hooghly</p>
+                    <p><i class="fa-solid fa-phone"></i> + 01-2345-6789</p>
+                    <p><i class="fa-solid fa-envelope"></i> FashionHub@gmail.com</p>
+                    <p>5th Semester Minor Project</p>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Products</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#">Men's Product</a></li>
+                        <li><a href="#">Women's Product</a></li>
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">Shoes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Information</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="./about.html">About us</a></li>
+                        <li><a href="./contact.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Follow us</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-github"></i> Github</a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p>Copyright &copy; Fashion Hub 2023 All right preserved</p>
+        </div>
+    </footer>
+
+    <script src="./js/bars.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/validate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Hub</title>
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico" type="image/x-icon">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- responsive CSS Link -->
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="body">
+    <!-- Overlay For Popup -->
+    <div id="modal-close-overlay"></div>
+
+    <!-- Login Signup Modal -->
+    <div id="modal">
+        <!-- Modal Image -->
+        <div id="modal-image">
+            <img src="./images/Modal/modal.png" alt="Modal Image">
+        </div>
+        <!-- Modal Close Button -->
+        <div id="modal-close-btn">
+            <i class="fa-solid fa-x" id="closeModal"></i>
+        </div>
+        <!-- Login Form -->
+        <div id="modal-login-form">
+            <h3>Login</h3>
+            <form action="#" id="login-form">
+                <div class="modal-input-box">
+                    <input type="email" placeholder="Email Address" id="login-email-input">
+                    <i id="login-email-icon" class="fa-regular fa-envelope" style="color: #a0a4ac;"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Password" id="login-password-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="login-eye-icon"></i>
+                </div>
+                <div class="modal-input-box">
+                    <a href="#">Forgot Password ?</a>
+                </div>
+                <div class="modal-input-box">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="modal-input-box">
+                    <p>Don't have an Account ? <a id="toSignupPage">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- Signup Form -->
+        <div id="modal-signup-form">
+            <h3>Signup</h3>
+            <form action="#" id="signup-form">
+                <div class="modal-input-box">
+                    <input type="text" placeholder="Full Name" id="signup-username-input">
+                </div>
+                <div class="modal-input-box">
+                    <input type="email" placeholder="Email Address" id="signup-email-input">
+                    <i id="signup-email-icon" class="fa-regular fa-envelope" style="color: #a0a4ac;"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Password" id="signup-password-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="signup-eye-icon1"></i>
+                </div>
+                <div class="modal-input-box">
+                    <input type="password" placeholder="Confirm Password" id="signup-cpassword-input">
+                    <i class="fa-regular fa-eye-slash eye-icon" id="signup-eye-icon2"></i>
+                </div>
+                <div class="modal-input-box">
+                    <button type="submit">Sign up</button>
+                </div>
+                <div class="modal-input-box">
+                    <p>Already have an Account ? <a id="toLoginPage">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <!-- Header Top -->
+        <div id="header-top">
+            <div id="logo">
+                <a href="./index.html">
+                    <img src="./images/logo/logo.png" alt="Website Logo">
+                </a>
+            </div>
+            <div class="search-container notMobile" id="search-product-input-box">
+                <form action="#">
+                    <input type="search" placeholder="Search Your Product..." id="search-product-input">
+                </form>
+            </div>
+            <!-- After Login -->
+            <div class="user-actions notMobile" id="profile-dropdown-box">
+                <div id="show-dropdown">
+                    <div id="dropdown-title">
+                        <a href="./profile.html">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                        <div id="profile-dropdown">
+                            <div id="profile-dropdown-title">
+                                <em>Hey</em>
+                                <span>Guest</span>
+                            </div>
+                            <div id="dropdown-content">
+                                <a href="./profile.html">
+                                    <i class="fa-solid fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="./cart.html">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>My Cart</span>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="./cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
+            <!-- Mobile Bars -->
+            <div class="user-actions onMobile">
+                <i class="fa-solid fa-magnifying-glass" id="mobile-search"></i>
+                <i class="fa-solid fa-bars" id="hamburger"></i>
+            </div>
+        </div>
+        <!-- Header Navigation -->
+        <nav id="navbar">
+            <ul class="nav-items" id="mobile-navigation">
+                <div class="nav-profile-pic onMobile">
+                    <h3><i class="fa-solid fa-circle-user"></i> &nbsp;Guest</h3>
+                </div>
+                <li class="mobile-user-actions onMobile"></li>
+                </li>
+                <li><a href="./index.html" class="nav-active">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li>
+                    <div class="user-actions" id="openModal">
+                        <a class="openModal" style="cursor: pointer;">Login / Signup</a>
+                    </div>
+                </li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-search-box">
+            <!-- Search Container -->
+            <div id="search-container-2">
+                <form action="#">
+                    <input type="search" placeholder="Search Your Product..." id="search-product-input-2">
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main id="banner">
+        <div id="banner-content">
+            <h3>Trending Item</h3>
+            <h1>Winter Collection</h1>
+            <h1>Fashion Sale</h1>
+            <h2>Upto 30% OFF</h2>
+            <a href="./shop.html" class="btn btn-primary">Shop Now</a>
+        </div>
+    </main>
+
+    <!-- Collection Section -->
+    <section id="collections">
+        <div id="collections-title">
+            <h2>Shop By Categories</h2>
+        </div>
+        <div id="collections-content">
+            <div id="collection-box1">
+                <div class="collection-box-content">
+                    <a href="./shop.html">Men's Collection</a>
+                </div>
+            </div>
+            <div id="collection-box2">
+                <div class="collection-box-content">
+                    <a href="./shop.html">Women's Collection</a>
+                </div>
+            </div>
+            <div id="collection-box3">
+                <div class="collection-box-content">
+                    <a href="./shop.html">Accessories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section id="trending-products">
+        <div id="trending-product-title">
+            <h2>Trending Products</h2>
+        </div>
+        <div class="product-container reveal">
+            <!-- Link -->
+            <a href="./product.html">
+                <!-- Product Box -->
+                <div class="product-box">
+                    <img src="./images/Products/mens/shirt-7.jpg">
+                    <div class="product-desc">
+                        <h4>T-shirt</h4>
+                        <h2>Men's Black Tshirt</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 499</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-1.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Nike Blue Shoes</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 799</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/bags/bag-1.jpg">
+                    <div class="product-desc">
+                        <h4>Bag</h4>
+                        <h2>Azune brown Bag</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1299</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/bags/bag-2.jpg">
+                    <div class="product-desc">
+                        <h4>Bag</h4>
+                        <h2>Azune Blue Bag</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1199</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-2.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Sports Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1999</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/mens/shirt-1.jpg">
+                    <div class="product-desc">
+                        <h4>T-shirt</h4>
+                        <h2>Colorful Stylish T-shirt</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>3.7</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 399</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/mens/shirt-6.jpg">
+                    <div class="product-desc">
+                        <h4>T-shirt</h4>
+                        <h2>Cara Men's t-shirt</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.4</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 499</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/mens/jacket-3.jpg">
+                    <div class="product-desc">
+                        <h4>Jacket</h4>
+                        <h2>Men's Jacket</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>2.9</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 999</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="show-more reveal">
+            <a href="./shop.html"><i class="fa-regular fa-eye"></i> See More</a>
+        </div>
+    </section>
+
+    <!-- Shoes New Arrivals Banner -->
+    <section class="reveal" id="shoes-new-arrivals">
+        <div class="shoes-new-arrivals-img" id="shoes-new-arrivals-img1">
+            <img src="./images/Collection/shoe-8.jpg" alt="Shoe">
+        </div>
+        <div id="shoes-new-arrivals-content">
+            <h4>Fashion Hub</h4>
+            <h2>Shoes Collection</h2>
+            <h3>New Arrivals</h3>
+            <a href="./shop.html">Shop Now</a>
+        </div>
+        <div class="shoes-new-arrivals-img" id="shoes-new-arrivals-img2">
+            <img src="./images/Collection/shoe-9.jpg" alt="Shoe">
+        </div>
+    </section>
+
+    <!-- Shoes Section -->
+    <section id="shoes-recent-launch">
+        <div id="shoes-recent-launch-title">
+            <h2>Best Sellings</h2>
+        </div>
+        <div class="product-container reveal">
+            <!-- Links -->
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-1.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Men's Blue Sneaker</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 499</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-2.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Nike Blue Shoes</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 799</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-13.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>White Sport's Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1299</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-4.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Nike Black Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1199</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-7.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Nike Red Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 1999</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-8.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Colorful Stylish Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>3.7</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 399</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-10.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>Air Jordan 7</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.4</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 2499</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./product.html">
+                <div class="product-box">
+                    <img src="./images/Products/shoes/shoe-12.jpg">
+                    <div class="product-desc">
+                        <h4>Shoe</h4>
+                        <h2>White Casual Shoe</h2>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <span>2.9</span>
+                        </div>
+                        <h3><i class="fa-solid fa-indian-rupee-sign"></i> 999</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="show-more reveal">
+            <a href="./shop.html"><i class="fa-regular fa-eye"></i> See More</a>
+        </div>
+    </section>
+
+    <!-- Explore More Section -->
+    <section class="reveal" id="explore-more">
+        <div id="explore-img">
+            <img src="./images/banner/explore.png" alt="Explore More">
+        </div>
+        <div id="explore-desc">
+            <h3>Best Savings on<br>new arrivals</h3>
+            <p>Fashion Hub - Your Ultimate Destination for Stylish Clothing and Accessories - Discover the Latest Trends
+                and Elevate Your Style</p>
+            <a href="./shop.html">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Why Shop with us section -->
+    <section id="shop-with-us">
+        <h2>Why Shop with us</h2>
+        <div id="trust" class="reveal">
+            <div id="trust-container1">
+                <div class="trust-box">
+                    <img src="./images/trusts/fast-delivery.png" alt="Fast Delivery">
+                    <h3>Fast Delivery</h3>
+                    <span>Free Delivery on Orders over 499</span>
+                </div>
+                <div class="trust-box">
+                    <img src="./images/trusts/money-back-guarantee.png" alt="Money back">
+                    <h3>Money Back Gurantee</h3>
+                    <span>If goods have problem.</span>
+                </div>
+            </div>
+            <div id="trust-container2">
+                <div class="trust-box">
+                    <img src="./images/trusts/secure-payment.png" alt="Secure Payment">
+                    <h3>Secure Payment</h3>
+                    <span>100% Secure Payment</span>
+                </div>
+                <div class="trust-box">
+                    <img src="./images/trusts/badge.png" alt="Trusted">
+                    <h3>Best Quality</h3>
+                    <span>Trustful Company</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="footer-top">
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Fashion Hub</h3>
+                </div>
+                <div class="footer-content">
+                    <p><i class="fa-solid fa-location-dot"></i> Techno College Hooghly</p>
+                    <p><i class="fa-solid fa-phone"></i> + 01-2345-6789</p>
+                    <p><i class="fa-solid fa-envelope"></i> FashionHub@gmail.com</p>
+                    <p>5th Semester Minor Project</p>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Products</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#">Men's Product</a></li>
+                        <li><a href="#">Women's Product</a></li>
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">Shoes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Information</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="./shop.html">Shop</a></li>
+                        <li><a href="./about.html">About us</a></li>
+                        <li><a href="./contact.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="footer-title">
+                    <h3>Follow us</h3>
+                </div>
+                <div class="footer-content">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-github"></i> Github</a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p>Copyright &copy; Fashion Hub 2023 All right preserved</p>
+        </div>
+    </footer>
+
+    <script src="./js/bars.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/validate.js"></script>
+</body>
+
+</html>
